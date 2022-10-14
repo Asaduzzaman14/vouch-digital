@@ -32,7 +32,7 @@ const contactSchema = mongoose.Schema({
         // validator: [validator.isURL, " Please Provie av valid URL"]
     },
     location: String,
-    age: Number,
+    contact: Number,
 
 
 }, { timestamps: true })
