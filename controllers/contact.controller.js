@@ -49,7 +49,7 @@ exports.getContact = async (req, res, next) => {
             console.log(fields);
         }
         if (req.query.page) {
-            const { page = 1, limit = 1 } = req.query;
+            const { page = 1, limit = 2 } = req.query;
             const skip = (page - 1) * parseInt(limit)
             queries.skip = skip;
             queries.limit = parseInt(limit)
@@ -151,9 +151,8 @@ exports.deleteAContact = async (req, res, next) => {
 
 exports.addBulkContact = async (req, res, next) => {
     try {
-        // console.log(req.body);
+        // console.log(req.body, "this is bullk contact");
         const result = await addBulkContacttService(req.body);
-
         res.status(200).json({
             status: true,
             message: "Successfully Bulk contact added",

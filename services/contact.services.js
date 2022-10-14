@@ -47,20 +47,8 @@ exports.deleteContactService = async (id) => {
 
 
 exports.addBulkContacttService = async (data) => {
-    console.log(data);
-    const result = await Contact.insertMany(data.data)
+    const result = await Contact.insertMany(data)
     return result;
-
-    // const products = []
-    // data.ids.forEach(product => {
-    //     console.log(product.id, product.data);
-    //     products.push(Contact.updateOne({ _id: product.id }, product.data));
-
-    // });
-
-    // const result = await Promise.all(products)
-
-    return result
 
 
 }
