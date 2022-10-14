@@ -24,8 +24,8 @@ app.get("/", (req, res) => {
     res.send("Rouret is warking!")
 })
 
-app.use("/user", userRoutes)
 app.use("/contact", contactRoutes)
+app.use("/user", userRoutes)
 
 //server
 const port = process.env.PORT || 5000
