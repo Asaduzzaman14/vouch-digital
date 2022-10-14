@@ -12,17 +12,19 @@ app.use(cors())
 
 
 //database connecton
-mongoose.connect(process.env.DATABASE_LOCAL).then(() => {
+mongoose.connect(process.env.DATABASE).then(() => {
     console.log("Database is connection is Succesfull".green.bold)
 })
 
 const contactRoutes = require("./routes/contactRoutes")
+const userRoutes = require("./routes/user.route")
 
 
 app.get("/", (req, res) => {
     res.send("Rouret is warking!")
 })
 
+app.use("/user", userRoutes)
 app.use("/contact", contactRoutes)
 
 //server
